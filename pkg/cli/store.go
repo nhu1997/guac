@@ -63,6 +63,9 @@ func init() {
 	set.String("arango-user", "", "arango user to connect to graph db")
 	set.String("arango-pass", "", "arango password to connect to graph db")
 
+	set.String("ent-user", "guac", "ent user to connect to graph db")
+	set.String("ent-pass", "guac", "ent password to connect to graph db")
+
 	set.String("gql-addr", "http://localhost:8080/query", "endpoint used to connect to graphQL server")
 
 	set.String("verifier-key-path", "", "path to pem file to verify dsse")

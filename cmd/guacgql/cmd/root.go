@@ -57,6 +57,10 @@ var flags = struct {
 	neptuneRegion   string
 	neptuneUser     string
 	neptuneRealm    string
+
+	// Needed only if using ent backend
+	entUser string
+	entPass string
 }{}
 
 var rootCmd = &cobra.Command{
@@ -91,6 +95,9 @@ var rootCmd = &cobra.Command{
 		flags.neptuneUser = viper.GetString("neptune-user")
 		flags.neptuneRealm = viper.GetString("neptune-realm")
 
+		flags.entUser = viper.GetString("ent-user")
+		flags.entPass = viper.GetString("ent-pass")
+
 		startServer(cmd)
 	},
 }
@@ -102,6 +109,7 @@ func init() {
 		"arango-addr", "arango-user", "arango-pass",
 		"neo4j-addr", "neo4j-user", "neo4j-pass", "neo4j-realm",
 		"neptune-endpoint", "neptune-port", "neptune-region", "neptune-user", "neptune-realm",
+		"ent-user", "ent-pass",
 		"gql-test-data", "gql-listen-port", "gql-debug", "gql-backend", "gql-trace",
 		"db-address", "db-driver", "db-debug", "db-migrate",
 	})

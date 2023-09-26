@@ -14,7 +14,7 @@ services:
   #     - "7474:7474"
   #     - "7687:7687"
   #   restart: on-failure
-
+  
   postgres:
     image: postgres:15
     environment:
@@ -71,6 +71,8 @@ services:
     command: "/opt/guac/guacgql"
     working_dir: /guac
     restart: on-failure
+    links:
+      - postgres
     depends_on:
       nats:
         condition: service_healthy

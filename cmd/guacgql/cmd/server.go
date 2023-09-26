@@ -58,6 +58,7 @@ func init() {
 		getOpts = make(map[string]optsFunc)
 	}
 	getOpts[arango] = getArango
+	getOpts[ent] = getEnt
 	getOpts[neo4js] = getNeo4j
 	getOpts[inmems] = getInMem
 	getOpts[neptunes] = getNeptune
